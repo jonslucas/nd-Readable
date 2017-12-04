@@ -24,7 +24,7 @@ function comment (state=comments, action) {
       };
     case DELETE_COMMENT:
       return {
-        ... state,
+        ...state,
         [id]: {
           ...state[id],
           delete: true,
