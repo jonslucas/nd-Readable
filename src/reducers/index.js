@@ -7,7 +7,7 @@ const posts = {};
 const comments = {};
 
 function comment (state=comments, action) {
-  const {id, comment, postId, author, createTime} = action;
+  const {id, postId, createTime, body, author, voteScore, parentDeleted} = action;
 
   switch (action.type) {
     case ADD_COMMENT:
@@ -15,10 +15,13 @@ function comment (state=comments, action) {
         ...state,
         [id]: {
           ...state[id],
+          id,
           postId,
-          comment,
-          author,
           createTime,
+          body,
+          author,
+          voteScore,
+          parentDeleted,
           delete: false,
         }
       };
@@ -36,7 +39,7 @@ function comment (state=comments, action) {
 }
 
 function post (state=posts, action) {
-  const {id, author, content, createTime } = action;
+  const {id, createTime, title, body, author, category, voteScore } = action;
 
   switch (action.type) {
     case SUBMIT_POST:
@@ -45,7 +48,10 @@ function post (state=posts, action) {
         [id]: {
           ...state[id],
           author,
-          content,
+          title,
+          body,
+          category,
+          voteScore,
           createTime,
           delete: false
         }
