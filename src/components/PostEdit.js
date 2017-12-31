@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const NewPost = (props) => {
+const PostEdit = (props) => {
   return (
     <div>
       Add a New Post
@@ -9,4 +9,4 @@ const NewPost = (props) => {
   );
 }
 
-export default NewPost
+export default PostEdit
