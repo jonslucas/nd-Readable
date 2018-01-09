@@ -26,3 +26,28 @@
 .container {
   padding: 2em 2em;
 }
+
+.post-input {
+  width: 85%;
+  margin-left: 7.5%;
+}
+
+.post-input-title {
+  display: block;
+  width: 100%;
+  margin: .5% 0;
+}
+
+.post-input-author {
+  display: block;
+  width: 50%;
+  margin: .5% 0;
+}
+
+.post-input-content {
+  display: block;
+  height: 300px;
+  width: 100%;
+  overflow: auto;
+
+}
