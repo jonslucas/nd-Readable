@@ -78,9 +78,10 @@ class PostEdit extends Component {
               submit(p);
               // TODO: Implement redirect to PostDetail view with proper URL path:
               // /:category/:postID
-              // setTimeout(()=>{
-              //   window.location.href = `${window.location.origin}/post/${p.id}`;
-              // }, 500);
+              // BUG: Breaks on new post submission; seems to reload default
+              // state instead of using current state.  Would likely go away upon
+              // wiring in backend.  May want to rethink redirect though.
+              window.location.href = `${window.location.origin}/post/${p.id}`;
 
             }
 
