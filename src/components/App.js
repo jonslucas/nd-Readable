@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, NavLink } from 'react-router-dom';
 import PostList from './PostList';
 import PostEdit from './PostEdit';
 import PostDetail from './PostDetail';
@@ -12,19 +12,19 @@ class App extends Component {
       <div className="App">
         <div className="nav-header">
           <div className="nav-brand">
-            <Link to="/">
+            <NavLink to="/">
               <h3 className="brand">Readable</h3>
-            </Link>
+            </NavLink>
           </div>
           <div className="nav-items">
-            <Link to='/'>Posts</Link>
-            <Link to='/posts/add'>Add Post </Link>
+            <NavLink to='/posts/add'>Add Post </NavLink>
           </div>
         </div>
         <div className="container">
           <Switch>
             <Route exact path='/' component={PostList}/>
             <Route exact path='/posts/add' component={PostEdit} />
+            <Route exact path='/posts/edit/:postId' component={PostEdit} />
             <Route path='/post/:postId' component={PostDetail} />
             <Route path='/search' component={Search} />
           </Switch>
