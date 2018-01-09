@@ -26,9 +26,7 @@ const PostDetail = (props) => {
 export default connect(({posts, comments},ownProps)=>{
 
   const { postId } = ownProps.match.params;
-
-
-
+  
   return {
     post: posts[postId],
     comments:Object.keys(comments)

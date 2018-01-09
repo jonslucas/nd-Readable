@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import { addPost } from '../actions';
 import uuidv4 from 'uuid/v4';
 
@@ -30,7 +29,6 @@ class PostEdit extends Component {
   render() {
     const { post, submit } = this.props;
     let { title, author, body, voteScore } = post;
-    console.log(JSON.stringify(post, null, 2));
 
     return (
       <div className='post-input'>
@@ -63,18 +61,28 @@ class PostEdit extends Component {
 
           <button className='post-input-button' onClick={(e)=>{
             e.preventDefault();
-            const p = {
-              id: post.id || uuidv4(),
-              title: title.value,
-              author: author.value,
-              body: body.value,
-              voteScore: voteScore || 0,
-              category: this.state.category,
-              createTime: Date.now(),
-            };
-            console.log(JSON.stringify(p, null, 2));
-            submit(p);
-            // TODO: Implement redirect to PostDetail view.
+            if (!title.value) title.required = true;
+            if (!author.value) author.required = true;
+            if (!body.value) body.required = true;
+            if (title.value && author.value && body.value) {
+              const p = {
+                id: post.id || uuidv4(),
+                title: title.value,
+                author: author.value,
+                body: body.value,
+                voteScore: voteScore || 0,
+                category: this.state.category,
+                createTime: Date.now(),
+              };
+              console.log(JSON.stringify(p, null, 2));
+              submit(p);
+              // TODO: Implement redirect to PostDetail view with proper URL path:
+              // /:category/:postID
+              // setTimeout(()=>{
+              //   window.location.href = `${window.location.origin}/post/${p.id}`;
+              // }, 500);
+
+            }
 
           }} > Submit </button>
         </form>
