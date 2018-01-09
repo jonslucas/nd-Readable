@@ -20,13 +20,24 @@ export function deleteComment({id}) {
   };
 }
 
-export function addPost({id, author, content, createTime}) {
+export function addPost({
+  id,
+  title,
+  author,
+  body,
+  createTime,
+  voteScore,
+  category
+}) {
   return {
     type: SUBMIT_POST,
     id,
+    title,
     author,
-    content,
+    body,
     createTime,
+    voteScore,
+    category,
   };
 }
 
