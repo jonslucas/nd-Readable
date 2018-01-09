@@ -81,7 +81,7 @@ class PostEdit extends Component {
               // BUG: Breaks on new post submission; seems to reload default
               // state instead of using current state.  Would likely go away upon
               // wiring in backend.  May want to rethink redirect though.
-              window.location.href = `${window.location.origin}/post/${p.id}`;
+              window.location.href = `${window.location.origin}/${p.category}/${p.id}`;
 
             }
 

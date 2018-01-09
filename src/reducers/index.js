@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { SUBMIT_POST, ADD_COMMENT, DELETE_COMMENT, DELETE_POST } from '../actions';
+import { SUBMIT_POST, ADD_COMMENT, DELETE_COMMENT, DELETE_POST, VOTE_UP_COMM, VOTE_UP_POST, VOTE_DOWN_COMM, VOTE_DOWN_POST } from '../actions';
 
 // posts object is keyed on post id
 const postsObj = {
@@ -80,6 +80,23 @@ function posts (state=postsObj, action) {
         [id]: {
           ...state[id],
           delete: true
+        }
+      };
+    case VOTE_UP_POST:
+      console.log("upVote case")
+      return {
+        ...state,
+        [id]: {
+          ...state[id],
+          voteScore: state[id].voteScore+1
+        }
+      };
+    case VOTE_DOWN_POST:
+      return {
+        ...state,
+        [id]: {
+          ...state[id],
+          voteScore: state[id].voteScore-1
         }
       };
     default:

@@ -25,7 +25,8 @@ class App extends Component {
             <Route exact path='/' component={PostList}/>
             <Route exact path='/posts/add' component={PostEdit} />
             <Route exact path='/posts/edit/:postId' component={PostEdit} />
-            <Route path='/post/:postId' component={PostDetail} />
+            <Route exact path='/:category' component={PostList} />
+            <Route exact path='/:category/:postId' component={PostDetail} />
             <Route path='/search' component={Search} />
           </Switch>
         </div>
