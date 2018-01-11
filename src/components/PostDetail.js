@@ -1,17 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { upVoteComm, upVotePost, downVoteComm, downVotePost } from '../actions';
+import { VotePost } from './Vote';
 
 const PostDetail = (props) => {
   // console.log(JSON.stringify(props), null, 2);
   const {post, upPost, downPost} = props;
   return (
     <div>
-      <div className="vote-btns">
-        <button className="up-vote" onClick={()=>upPost(post.id)}>+</button>
-        <h3 className="vote-score">{post.voteScore}</h3>
-        <button className="down-vote" onClick={()=>downPost(post.id)}>-</button>
-      </div>
+      <VotePost id={post.id} />
       <div className="post-header">
         {/* <h3>Placeholder Title</h3>
         <h4><em>Placeholder Author</em></h4> */}
@@ -40,11 +36,4 @@ export default connect(({posts, comments},ownProps)=>{
                    .filter(c=>c.postId===postId),
     ...ownProps,
   }
-}, (dispatch)=>{
-  return {
-    upComm: (id)=>dispatch(upVoteComm(id)),
-    downComm: (id)=>dispatch(downVoteComm(id)),
-    upPost: (id)=>dispatch(upVotePost(id)),
-    downPost: (id)=>dispatch(downVotePost(id))
-  };
 })(PostDetail);

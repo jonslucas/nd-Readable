@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
-import { upVotePost,downVotePost } from '../actions';
+import { VotePost } from './Vote';
 
 
 const mapStateToProps = ({posts, comments}, ownProps) => {
@@ -22,12 +22,6 @@ const mapStateToProps = ({posts, comments}, ownProps) => {
 
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    upPost: (id)=>dispatch(upVotePost(id)),
-    downPost: (id)=>dispatch(downVotePost(id))
-  };
-}
 
 const PostList = (props) => {
   const { posts, upPost, downPost } = props;
@@ -43,19 +37,17 @@ const PostList = (props) => {
           posts.map(post=>{
             const link = `/${post.category}/${post.id}`;
             return (
-              <div key={post.id}>
-                <div className="score-block">
-                  <button className="up-vote" onClick={()=>upPost(post.id)}>+</button>
-                  <h3 className="vote-score">{post.voteScore}</h3>
-                  <button className="down-vote" onClick={()=>downPost(post.id)}>-</button>
-                </div>
-                <h4>{post.title}</h4>
-                <div className="body-preview">
-                  <p>{post.body.slice(0,200)+'...'}</p>
-                  <Link to={link}> More </Link>
-                </div>
-                <div className="categories">
-                  <p>{post.category}</p>
+              <div key={post.id} className="post-list-item-container">
+                <VotePost id={post.id} />
+                <div className="post-list-item-content">
+                  <h4>{post.title}</h4>
+                  <div className="body-preview">
+                    <p>{post.body.slice(0,200)+'...'}</p>
+                    <Link to={link}> More </Link>
+                  </div>
+                  <div className="categories">
+                    <p>{post.category}</p>
+                  </div>
                 </div>
               </div>
 
@@ -68,4 +60,4 @@ const PostList = (props) => {
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostList)
+export default connect(mapStateToProps)(PostList)

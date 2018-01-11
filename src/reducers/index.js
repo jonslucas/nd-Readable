@@ -50,6 +50,22 @@ function comments (state=commentsObj, action) {
           delete: true,
         }
       };
+      case VOTE_UP_COMM:
+        return {
+          ...state,
+          [id]: {
+            ...state[id],
+            voteScore: state[id].voteScore+1
+          }
+        };
+      case VOTE_DOWN_COMM:
+        return {
+          ...state,
+          [id]: {
+            ...state[id],
+            voteScore: state[id].voteScore-1
+          }
+        };
     default:
       return state;
   }
@@ -83,7 +99,6 @@ function posts (state=postsObj, action) {
         }
       };
     case VOTE_UP_POST:
-      console.log("upVote case")
       return {
         ...state,
         [id]: {
