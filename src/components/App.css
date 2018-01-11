@@ -51,3 +51,26 @@
   overflow: auto;
 
 }
+
+.post-list-item-container {
+  width: 95%;
+  height: 200px;
+  border: solid .15px grey;
+  border-radius: 0 10px 10px 0;
+  padding: 1em;
+  margin: 10px 20px;
+  -webkit-box-shadow: 10px 10px 22px 1px rgba(199,199,199,1);
+  -moz-box-shadow: 10px 10px 22px 1px rgba(199,199,199,1);
+  box-shadow: 10px 10px 22px 1px rgba(199,199,199,1);
+}
+
+.post-list-item-content {
+  display: inline-block;
+  width: 90%;
+}
+
+.vote-btns {
+  display: inline-block;
+  margin-right: 15px;
+  text-align: center;
+}
