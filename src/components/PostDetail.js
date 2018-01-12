@@ -1,26 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { VotePost } from './Vote';
+import { Post } from './Post';
+import { Comment } from './Comment';
+
 
 const PostDetail = (props) => {
-  // console.log(JSON.stringify(props), null, 2);
-  const {post, upPost, downPost} = props;
+  // console.log(JSON.stringify(props.comments, null, 2));
+  const {post, comments} = props;
+  const commView = comments.map(c=><Comment comment={c} />);
   return (
     <div>
-      <VotePost id={post.id} />
-      <div className="post-header">
-        {/* <h3>Placeholder Title</h3>
-        <h4><em>Placeholder Author</em></h4> */}
-        <h3>{post.title}</h3>
-        <h4><em>{post.author}</em></h4>
-      </div>
-      <div className="post-body">
-        {post.body}
-        {/* <p>Placeholder body</p> */}
-      </div>
-      <div className="post-footer">
-        <p>Placeholder footer</p>
-      </div>
+      <Post post={post} />
+      {commView}
+
     </div>
   );
 }
@@ -33,7 +25,8 @@ export default connect(({posts, comments},ownProps)=>{
     post: posts[postId],
     comments:Object.keys(comments)
                    .map(ids=>comments[ids])
-                   .filter(c=>c.postId===postId),
+                   .filter(c=>c.parentId===postId)
+                   .filter(c=>!c.deleted||!c.parentDeleted),
     ...ownProps,
   }
 })(PostDetail);
