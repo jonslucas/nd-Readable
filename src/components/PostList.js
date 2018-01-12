@@ -5,9 +5,13 @@ import { VotePost } from './Vote';
 
 
 const mapStateToProps = ({posts, comments}, ownProps) => {
+  const commArr = Object.keys(comments).map(cID=>comments[cID]);
   posts = Object.keys(posts).map(postID=>{
     // console.log(JSON.stringify(posts[postID],null,2));
-    return posts[postID];
+    return {
+      ...posts[postID],
+      commCount: commArr.filter(c=>c.parentId===postID).length
+    };
   });
   const {category} = ownProps.match.params;
   if (category) {
@@ -24,7 +28,7 @@ const mapStateToProps = ({posts, comments}, ownProps) => {
 
 
 const PostList = (props) => {
-  const { posts, upPost, downPost } = props;
+  const { posts } = props;
   return (
     <div>
       <div className='cat-nav'>
@@ -47,6 +51,9 @@ const PostList = (props) => {
                   </div>
                   <div className="categories">
                     <p>{post.category}</p>
+                  </div>
+                  <div className="comm-count">
+                    {post.commCount} comments
                   </div>
                 </div>
               </div>
