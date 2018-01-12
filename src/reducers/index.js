@@ -23,8 +23,8 @@ Eat owner's food attack the dog then pretend like nothing happened. If it smells
 
 const commentsObj = {
   "894tuq4ut84ut8v4t8wun89g": {
-    id: 'lkjsS22',
-    parentId: "8xf0y6ziyjabvozdd253nd",
+    id: '894tuq4ut84ut8v4t8wun89g',
+    parentId: "lkjsS22",
     timestamp: 1468166872634,
     body: 'Hi there! I am a COMMENT.',
     author: 'thingtwo',
@@ -33,8 +33,8 @@ const commentsObj = {
     parentDeleted: false
   },
   "8tu4bsun805n8un48ve89": {
-    id: 'lkjsS22',
-    parentId: "8xf0y6ziyjabvozdd253nd",
+    id: '8tu4bsun805n8un48ve89',
+    parentId: "lkjsS22",
     timestamp: 1469479767190,
     body: 'Comments. Are. Cool.',
     author: 'thingone',
