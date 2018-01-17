@@ -35,13 +35,15 @@ export function downVotePost(id) {
   };
 }
 
-export function addComment({id, author, comment, createTime}) {
+export function addComment({id, author, body, parentId, voteScore, timestamp}) {
   return {
     type: ADD_COMMENT,
     id,
     author,
-    comment,
-    createTime,
+    body,
+    parentId,
+    voteScore,
+    timestamp,
   };
 }
 
