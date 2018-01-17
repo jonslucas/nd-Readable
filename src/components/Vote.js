@@ -1,5 +1,5 @@
 import React from 'react';
-import { upVotePost,downVotePost, upVoteComm, downVoteComm } from '../actions';
+import { upVotePost,downVotePost, upVoteComment, downVoteComment } from '../actions';
 import { connect } from 'react-redux';
 
 
@@ -25,8 +25,8 @@ const mapVotePostDispatch = (dispatch) => {
 
 const mapVoteCommDispatch = (dispatch) => {
   return {
-    voteUp: (id)=>dispatch(upVoteComm(id)),
-    voteDown: (id)=>dispatch(downVoteComm(id)),
+    voteUp: (id)=>dispatch(upVoteComment(id)),
+    voteDown: (id)=>dispatch(downVoteComment(id)),
   };
 };
 
