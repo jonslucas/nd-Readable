@@ -45,17 +45,18 @@ const commentsObj = {
 };
 
 function comments (state=commentsObj, action) {
-  const {id, postId, createTime, body, author, voteScore, parentDeleted} = action;
+  const {id, parentId, timestamp, body, author, voteScore, parentDeleted} = action;
 
   switch (action.type) {
     case ADD_COMMENT:
+    console.log(JSON.stringify(action, null, 2));
       return {
         ...state,
         [id]: {
           ...state[id],
           id,
-          postId,
-          createTime,
+          parentId,
+          timestamp,
           body,
           author,
           voteScore,
