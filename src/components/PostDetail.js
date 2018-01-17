@@ -1,21 +1,58 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import Modal from 'react-modal';
 import { Post } from './Post';
 import { Comment } from './Comment';
+import CommentEdit from './CommentEdit';
+import sortBy from 'sort-by';
 
+class PostDetail extends React.Component {
+  state={
+    commentToEdit: '',
+    commentModal: false
+  }
 
-const PostDetail = (props) => {
-  // console.log(JSON.stringify(props.comments, null, 2));
-  const {post, comments} = props;
-  const commView = comments.map(c=><Comment comment={c} />);
-  return (
-    <div>
-      <Post post={post} />
-      {commView}
+  editComment = (id) => {
+    this.setState({
+      commentToEdit: id,
+      commentModal: true
+    });
+  }
+  closeCommentModal = () => {
+    this.setState({
+      commentModal: false
+    });
+  }
+  render() {
+    const {post, comments} = this.props;
+    const { commentToEdit, commentModal } = this.state;
+    comments.sort(sortBy('-voteScore', 'timestamp'));
+    const commView = comments.map(c=><Comment key={c.id} comment={c} edit={this.editComment}/>);
+    return (
+      <div>
+        <Post post={post} />
+        <button onClick={()=>this.editComment('')} >Comment</button>
+        {commView}
 
-    </div>
-  );
+        <Modal
+          className="modal"
+          overlayClassName="overlay"
+          isOpen={commentModal}
+          onRequestClose={this.closeCommentModal}
+          contentLabel="Modal"
+        >
+          {commentModal &&
+          <CommentEdit
+            parent={post}
+            id={commentToEdit}
+            closeModal={this.closeCommentModal}
+          />}
+        </Modal>
+      </div>
+    );
+  }
 }
+
 
 export default connect(({posts, comments},ownProps)=>{
 
