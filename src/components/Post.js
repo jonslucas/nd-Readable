@@ -3,10 +3,11 @@ import { VotePost } from './Vote';
 
 
 export const Post = (props) => {
-  const { post } = props;
+  const { post, remove } = props;
 
   return (
     <div>
+      <button onClick={(e)=>remove(post.id)}> Delete Post </button>
       <VotePost id={post.id} />
       <div className="post-header">
         <h3>{post.title}</h3>
@@ -14,9 +15,6 @@ export const Post = (props) => {
       </div>
       <div className="post-body">
         {post.body}
-      </div>
-      <div className="post-footer">
-        <p>Placeholder footer</p>
       </div>
     </div>
   );
