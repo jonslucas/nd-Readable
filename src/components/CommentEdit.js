@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addComment } from '../actions';
+import { addComment, updateComment } from '../actions';
 import uuidv4 from 'uuid/v4';
 
 
 
 const CommentEdit = (props) => {
-  const { parent, comment, submit } = props;
+  const { parent, comment, submit, update, closeModal } = props;
   let {id, body, author} = comment;
 
   return (
@@ -31,8 +31,11 @@ const CommentEdit = (props) => {
                 voteScore: comment.voteScore || 1,
                 timestamp: Date.now()
               }
-              // console.log(JSON.stringify(c, null, 2));
-              submit(c);
+
+              if (!id) submit(c);
+              else update(c);
+
+              closeModal();
               body.value='';
               author.value='';
 
@@ -56,10 +59,9 @@ const stateMap = ({comments}, ownProps) => {
 const dispatchMap = (dispatch, ownProps) => {
   const {closeModal} = ownProps;
   return {
-    submit: (comment) => {
-      dispatch(addComment(comment));
-      closeModal();
-    }
+    submit: (comment)=>dispatch(addComment(comment)),
+    closeModal,
+    update: (comment)=>dispatch(updateComment(comment))
   };
 }
 
