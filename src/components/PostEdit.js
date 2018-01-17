@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addPost } from '../actions';
+import { addPost, updatePost } from '../actions';
 import uuidv4 from 'uuid/v4';
 
 
@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    submit: (post) => dispatch(addPost(post))
+    submit: (post) => dispatch(addPost(post)),
+    update: (post) => dispatch(updatePost(post))
   }
 }
 class PostEdit extends Component {
@@ -27,7 +28,7 @@ class PostEdit extends Component {
   }
 
   render() {
-    const { post, submit } = this.props;
+    const { post, submit, update } = this.props;
     let { title, author, body, voteScore } = post;
 
     return (
@@ -70,12 +71,13 @@ class PostEdit extends Component {
                 title: title.value,
                 author: author.value,
                 body: body.value,
-                voteScore: voteScore || 0,
+                voteScore: voteScore,
                 category: this.state.category,
                 createTime: Date.now(),
               };
-              console.log(JSON.stringify(p, null, 2));
-              submit(p);
+              // console.log(JSON.stringify(p, null, 2));
+              if (!post.id) submit(p);
+              else update(p);
               // TODO: Implement redirect to PostDetail view with proper URL path:
               // /:category/:postID
               // BUG: Breaks on new post submission; seems to reload default
