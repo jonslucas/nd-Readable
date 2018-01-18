@@ -7,11 +7,13 @@ import CommentEdit from './CommentEdit';
 import Sort  from './Sort';
 import sortList from '../utils/sortList';
 import {fetchComments, fetchPost, deleteComment, deletePost } from '../actions';
+import './PostDetail.css';
 
-//TODO: add loading animation for this.state.postIsLoading===true;
-//TODO: redirect to 404 if no post found for this id
+
+
 
 class PostDetail extends React.Component {
+  //TODO: add loading animation for this.state.postIsLoading===true;
   state={
     commentToEdit: '',
     commentModal: false,
@@ -33,6 +35,7 @@ class PostDetail extends React.Component {
   changeSort = (e) => this.setState({sortComm: e.target.value})
   componentWillMount() {
     if (!this.props.post) {
+      //TODO: redirect to 404 if no post found for this id
       this.props.getPost(this.props.match.params.postId).then(b=>this.setState({postIsLoading: false}));
       this.props.getComments(this.props.match.params.postId);
     } else {
@@ -47,11 +50,20 @@ class PostDetail extends React.Component {
     const cs = sortList(comments, sortComm);
     const commView = cs.map(c=><Comment key={c.id} comment={c} edit={this.editComment} remove={deleteComment}/>);
     return ( !postIsLoading &&
-      <div>
+      <div className="post-detail-container">
         <Post post={post} remove={deletePost} />
-        <button onClick={()=>this.editComment('')} >Comment</button>
-        <Sort currSort={sortComm} changeSort={this.changeSort} />
-        {commView}
+        <div className="post-detail-btns">
+          <div>
+            <button onClick={()=>this.editComment('')} >Comment</button>
+          </div>
+          <div className="post-detail-sort">
+            <Sort currSort={sortComm} changeSort={this.changeSort} />
+          </div>
+        </div>
+        <div className="post-detail-comment-list">
+            {commView}
+        </div>
+
 
         <Modal
           className="modal"

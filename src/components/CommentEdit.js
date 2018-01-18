@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addComment, updateComment } from '../actions';
 import uuidv4 from 'uuid/v4';
+import './CommentEdit.css';
 
 
 
@@ -10,7 +11,7 @@ const CommentEdit = (props) => {
   let {id, body, author} = comment;
 
   return (
-    <div id="comment-edit" className="comment-container">
+    <div id="comment-edit" className="input-comment-container">
       <div>
         <form>
           <input type="text" name="author" placeholder="Sign your name"

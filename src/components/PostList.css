@@ -1,0 +1,124 @@
+.cat-nav {
+  height: 30px;
+  display: inline-block;
+
+  /* background: #8FD0CE; */
+}
+.cat-nav-label {
+  display: inline-block;
+  /* color: white; */
+  height: 100%;
+}
+.cat-btn {
+  display: inline-block;
+  border: solid .5px #BDBDBD;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 5px;
+  background: #ff5722;
+  color: #fff;
+
+}
+.cat-btn.selected {
+  color: #212121;
+}
+.sort-grp {
+  display: inline-block;
+  float: right;
+}
+.post-list-item-container {
+  width: 95%;
+  height: 200px;
+  /* border: solid .15px #BDBDBD; */
+  border-radius: 10px;
+  padding: 1em;
+  margin: 10px 20px 30px 20px;
+  background: #fff;
+  color: #212121;
+  -webkit-box-shadow: 10px 10px 22px 1px #01443C;
+  -moz-box-shadow: 10px 10px 22px 1px #01443C;
+  box-shadow: 10px 10px 22px 1px #01443C;
+  position: relative;
+}
+.post-list-item-vote-btns {
+  position: absolute;
+  top: 0.80em;
+  left: 1em;
+}
+
+.post-list-item-content {
+  /* border: solid .5px black; */
+  display: inline-block;
+  width: 91%;
+  position: absolute;
+  /* right: 1.75em; */
+  left: 5em;
+}
+.post-list-item-header {
+  /* border: solid .5px black; */
+  border-bottom: solid .5px #BDBDBD;
+  /* background: #00796B;
+  color: #fff; */
+  position: absolute;
+  top: 0em;
+  width: 100%;
+  /* right: 1.5em; */
+  /* left: 4em; */
+  padding-bottom: 1em;
+
+}
+.post-list-item-title {
+  display: inline-block;
+  font-size: 1.1em;
+  font-weight: 700;
+
+}
+.post-list-item-timestamp {
+  display: inline-block;
+  float: right;
+  font-style: italic;
+}
+.post-list-item-body-preview {
+  /* border: solid .5px black; */
+  /* height: 4em; */
+  position: absolute;
+  top: 3em;
+  width: 100%;
+
+}
+.post-list-item-body-preview > p {
+  display: inline-block;
+}
+.post-list-item-body-nav {
+  float: right;
+  border-left: solid .5px #BDBDBD;
+  padding-left: 1em;
+  height: 6em;
+
+}
+.post-list-item-body-nav > a {
+  display: block;
+  padding-bottom: 1em;
+
+}
+.post-list-item-footer {
+  border-top: solid .5px #BDBDBD;
+  position: absolute;
+  width: 100%;
+  top: 10em;
+}
+.post-list-item-categories {
+  /* border: solid .5px black; */
+  display: inline-block;
+  float: left;
+  font-style: italic;
+
+}
+.post-list-item-comm-count {
+  /* border: solid .5px black; */
+  display: inline-block;
+  float: right;
+  font-style: italic;
+
+}

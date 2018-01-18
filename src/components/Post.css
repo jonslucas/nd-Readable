@@ -1,0 +1,68 @@
+.post-edit-delete-grp {
+  display: block;
+  float: right;
+  position: absolute;
+  right: .8em;
+  top: .5em;
+  /* border: solid .5px green; */
+
+}
+.post-edit-btn,
+.post-delete-btn {
+  cursor: pointer;
+  /* border: solid .5px black; */
+  display: inline-block;
+  /* float: right; */
+  margin: .3em .3em 0 25px;
+}
+.post-edit-btn > a,
+.post-delete-btn {
+  text-decoration: none;
+
+}
+.post-vote-btns {
+  /* border: solid .5px black; */
+  display: inline-block;
+  margin-left: 25px;
+}
+.post-content {
+  /* border: solid .5px blue; */
+  position: absolute;
+  width: 85%;
+  left: 6em;
+  top: 1em;
+}
+.post-header {
+  /* border: solid .5px black; */
+
+}
+.post-title:after{
+  content: '';
+  width: 88%;
+  height: 3px;
+  background: #E0E0E0;
+  position: absolute;
+  top: 1.5em;
+  left: 0;
+}
+.post-author {
+  position: absolute;
+  right: 1em;
+  top: 0.85em;
+  font-size: 1em;
+  font-style: italic;
+
+}
+.post-author > i {
+  margin-left: 10px;
+}
+.post-title {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+.post-body {
+  /* border: solid 1px black; */
+  position: absolute;
+  top: 2.5em;
+
+}

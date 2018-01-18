@@ -5,6 +5,7 @@ import { VotePost } from './Vote';
 import { fetchPosts, deletePost } from '../actions';
 import Sort  from './Sort';
 import sortList from '../utils/sortList';
+import './PostList.css';
 
 
 const mapStateToProps = ({posts}, ownProps) => {
@@ -45,11 +46,13 @@ class PostList extends React.Component {
     return (
       <div>
         <div className='cat-nav'>
-          <NavLink to="/react"><button>React</button></NavLink>
-          <NavLink to="/redux"><button>Redux</button></NavLink>
-          <NavLink to="/udacity"><button>Udacity</button></NavLink>
+          <div className="cat-nav-label"> Categories: </div>
+          <NavLink to="/react" className="cat-btn" activeClassName="selected">React</NavLink>
+          <NavLink to="/redux" className="cat-btn" activeClassName="selected">Redux</NavLink>
+          <NavLink to="/udacity" className="cat-btn" activeClassName="selected">Udacity</NavLink>
+          <NavLink to="/" exact className="cat-btn" activeClassName="selected">None</NavLink>
         </div>
-        <Sort currSort={sort} changeSort={this.changeSort} />
+        <div className='sort-grp'><Sort currSort={sort} changeSort={this.changeSort} /></div>
         <div className='posts-container'>
           {
             ps.map(post=>{
@@ -58,22 +61,31 @@ class PostList extends React.Component {
               const ts = new Date(post.timestamp).toDateString();
               return (
                 <div key={post.id} className="post-list-item-container">
-                  <div>{ts}</div>
-                  <VotePost id={post.id} />
+                  <div className="post-list-item-vote-btns"><VotePost id={post.id} /></div>
+                  {/* <VotePost id={post.id} /> */}
                   <div className="post-list-item-content">
-                    <h4>{post.title}</h4>
-                    <div className="body-preview">
+                    <div className="post-list-item-header">
+                      <div className="post-list-item-title">{post.title}</div>
+                      <div className="post-list-item-timestamp">{ts}</div>
+                    </div>
+
+                    <div className="post-list-item-body-preview">
                       <p>{post.body.slice(0,200)+'...'}</p>
-                      <Link to={moreLink}> More </Link>
-                      <Link to={editLink}> Edit </Link>
-                      <button onClick={(e)=>deletePost(post.id)}> Delete </button>
+                      <div className="post-list-item-body-nav">
+                        <Link to={moreLink}> More </Link>
+                        <Link to={editLink}> Edit </Link>
+                        <a href='#' onClick={(e)=>deletePost(post.id)}> Delete </a>
+                      </div>
                     </div>
-                    <div className="categories">
-                      <p>{post.category}</p>
+                    <div className="post-list-item-footer">
+                      <div className="post-list-item-categories">
+                        <p>{post.category}</p>
+                      </div>
+                      <div className="post-list-item-comm-count">
+                        <p>{post.commentCount} comments</p>
+                      </div>
                     </div>
-                    <div className="comm-count">
-                      {post.commentCount} comments
-                    </div>
+
                   </div>
                 </div>
 

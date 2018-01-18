@@ -1,6 +1,7 @@
 import React from 'react';
 import { upVotePost,downVotePost, upVoteComment, downVoteComment } from '../actions';
 import { connect } from 'react-redux';
+import './Vote.css';
 
 
 // Presentational
@@ -9,9 +10,27 @@ const Vote = (props) => {
   const { id, voteUp, voteDown, score } = props;
   return (
     <div className="vote-btns">
-      <button className="up-vote" onClick={()=>voteUp(id)}>+</button>
-      <h3 className="vote-score">{score}</h3>
-      <button className="down-vote" onClick={()=>voteDown(id)}>-</button>
+      <div className="up-vote" onClick={()=>voteUp(id)}>
+        <i className="fa fa-chevron-up fa-3x" aria-hidden="true"></i>
+      </div>
+      <div className="vote-score">{score}</div>
+      <div className="down-vote" onClick={()=>voteDown(id)}>
+        <i className="fa fa-chevron-down fa-3x" aria-hidden="true"></i>
+      </div>
+    </div>
+  );
+}
+const VoteSmall = (props) => {
+  const { id, voteUp, voteDown, score } = props;
+  return (
+    <div className="vote-btns">
+      <div className="up-vote" onClick={()=>voteUp(id)}>
+        <i className="fa fa-chevron-up fa-2x" aria-hidden="true"></i>
+      </div>
+      <div className="vote-score-small">{score}</div>
+      <div className="down-vote" onClick={()=>voteDown(id)}>
+        <i className="fa fa-chevron-down fa-2x" aria-hidden="true"></i>
+      </div>
     </div>
   );
 }
@@ -46,4 +65,4 @@ const mapCommState = ({comments}, ownProps) => {
 };
 
 export const VotePost = connect(mapPostState, mapVotePostDispatch)(Vote);
-export const VoteComm = connect(mapCommState, mapVoteCommDispatch)(Vote);
+export const VoteComm = connect(mapCommState, mapVoteCommDispatch)(VoteSmall);
