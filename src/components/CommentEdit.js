@@ -14,7 +14,7 @@ const CommentEdit = (props) => {
     <div id="comment-edit" className="input-comment-container">
       <div>
         <form>
-          <input type="text" name="author" placeholder="Sign your name"
+          <input type="text" name="author" placeholder="Sign your name" disabled={id?true:false}
               ref={i=>author=i} defaultValue={author} className="input-comment-author" />
           <textarea className="input-comment-body" placeholder="Join the Conversation"
               ref={i=>body=i} defaultValue={body} name="body" spellCheck ></textarea>

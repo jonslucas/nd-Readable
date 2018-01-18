@@ -37,7 +37,7 @@ class PostEdit extends Component {
         <form>
           <input className='post-input-title' type='text' name='title'
             placeholder='Add A Title' ref={i=>title=i} defaultValue={title} />
-          <input className='post-input-author' type='text' name='author'
+          <input className='post-input-author' type='text' name='author' disabled={post.id?true:false}
             placeholder='Add An Author' ref={i=>author=i} defaultValue={author} />
           <textarea className='post-input-content'
             placeholder='Share Your Thoughts' defaultValue={body}
