@@ -12,7 +12,10 @@ export const Post = (props) => {
     <div className="post-container">
       <div className="post-edit-delete-grp">
         <div className="post-edit-btn"><Link to={editLink}> Edit </Link></div>
-        <a className="post-delete-btn" onClick={(e)=>remove(post.id)}> Delete </a>
+        <a className="post-delete-btn" onClick={(e)=>{
+          remove(post.id);
+          window.location.href = `${window.location.origin}/`;
+        }}> Delete </a>
       </div>
       <div className="post-vote-btns"><VotePost id={post.id} /> </div>
       <div className="post-content">

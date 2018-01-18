@@ -36,7 +36,11 @@ class PostDetail extends React.Component {
   componentWillMount() {
     if (!this.props.post) {
       //TODO: redirect to 404 if no post found for this id
-      this.props.getPost(this.props.match.params.postId).then(b=>this.setState({postIsLoading: false}));
+      this.props.getPost(this.props.match.params.postId)
+        .then(b=>{
+          if (!b) window.location.href = `${window.location.origin}/`;
+          else this.setState({postIsLoading: false})
+        });
       this.props.getComments(this.props.match.params.postId);
     } else {
       this.setState({postIsLoading: false});

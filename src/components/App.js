@@ -3,7 +3,6 @@ import { Switch, Route, NavLink } from 'react-router-dom';
 import PostList from './PostList';
 import PostEdit from './PostEdit';
 import PostDetail from './PostDetail';
-import Search from './Search';
 import './App.css';
 
 class App extends Component {
@@ -27,7 +26,7 @@ class App extends Component {
             <Route exact path='/posts/edit/:postId' component={PostEdit} />
             <Route exact path='/:category' component={PostList} />
             <Route exact path='/:category/:postId' component={PostDetail} />
-            <Route path='/search' component={Search} />
+            <Route component={PostList} />
           </Switch>
         </div>
 
