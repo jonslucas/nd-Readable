@@ -24,9 +24,9 @@ const PostListItem = (props) => {
         <div className="post-list-item-body-preview">
           <p>{post.body.slice(0,200)+'...'}</p>
           <div className="post-list-item-body-nav">
-            <Link to={moreLink}> More </Link>
-            <Link to={editLink}> Edit </Link>
-            <a href='#' onClick={(e)=>remove(post.id)}> Delete </a>
+            <div className="post-list-item-body-nav-btn more-btn" ><Link to={moreLink}> More </Link></div>
+            <div className="post-list-item-body-nav-btn edit-btn" ><Link to={editLink}> Edit </Link></div>
+            <div className="post-list-item-body-nav-btn delete-btn" onClick={(e)=>remove(post.id)}> Delete </div>
           </div>
         </div>
         <div className="post-list-item-footer">

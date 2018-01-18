@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { Link, NavLink } from 'react-router-dom'
-import { VotePost } from './Vote';
+import { NavLink } from 'react-router-dom'
 import PostListItem from './PostListItem'
 import { fetchPosts, deletePost } from '../actions';
 import Sort  from './Sort';
