@@ -122,3 +122,13 @@
   font-style: italic;
 
 }
+.no-posts-found {
+  width: 95%;
+  height: 150px;
+  /* border: solid .15px #BDBDBD; */
+  border-radius: 10px;
+  padding: 1em;
+  margin: 10px 20px 30px 20px;
+  background: #fff;
+  color: #212121;
+}

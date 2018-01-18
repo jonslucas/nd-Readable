@@ -54,7 +54,7 @@ class PostList extends React.Component {
         </div>
         <div className='sort-grp'><Sort currSort={sort} changeSort={this.changeSort} /></div>
         <div className='posts-container'>
-          {
+          {ps.length>0 ?
             ps.map(post=>{
               const moreLink = `/${post.category}/${post.id}`;
               const editLink = `/posts/edit/${post.id}`;
@@ -62,7 +62,6 @@ class PostList extends React.Component {
               return (
                 <div key={post.id} className="post-list-item-container">
                   <div className="post-list-item-vote-btns"><VotePost id={post.id} /></div>
-                  {/* <VotePost id={post.id} /> */}
                   <div className="post-list-item-content">
                     <div className="post-list-item-header">
                       <div className="post-list-item-title">{post.title}</div>
@@ -91,7 +90,11 @@ class PostList extends React.Component {
 
 
               );
-            })
+            }) :
+            <div className="no-posts-found">
+              <h3>No Post Found</h3>
+              <p> ...why don't you share something?</p>
+            </div>
           }
         </div>
       </div>
