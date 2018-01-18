@@ -1,11 +1,10 @@
 body {
   background: #009688;
-  /* color: #212121; */
   color: #fff;
 }
 
 .nav-header {
-  background: #00796B;  
+  background: #00796B;
   height: 75px;
   margin-bottom: 2em;
 }

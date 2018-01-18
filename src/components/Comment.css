@@ -7,21 +7,11 @@
 }
 .comment-vote-btns {
   position: absolute;
-  /* float: left; */
-  /* display: inline-block; */
-  /* border: solid 1px black; */
   left: 0.3em;
   top: 5px;
-  /* bottom: 0em; */
-  /* height: 75%; */
 }
 .comment-content {
-  /* position: absolute; */
-  /* height: 100%; */
-  /* width: 90%; */
   margin-left: 30px;
-  /* border: solid 1px black; */
-  /* left: 5em; */
 }
 .comment-author,
 .comment-timestamp {
@@ -34,13 +24,11 @@
   font-style: italic;
 }
 .comment-timestamp {
-  /* float: right; */
   position: absolute;
   top: 0.5em;
   right: 0.2em;
 }
 .comment-edit-delete-grp {
-  /* float: right; */
   position: absolute;
   bottom: 0.3em;
   right: 0.3em;

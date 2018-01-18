@@ -35,7 +35,6 @@ class PostDetail extends React.Component {
   changeSort = (e) => this.setState({sortComm: e.target.value})
   componentWillMount() {
     if (!this.props.post) {
-      //TODO: redirect to 404 if no post found for this id
       this.props.getPost(this.props.match.params.postId)
         .then(b=>{
           if (!b) window.location.href = `${window.location.origin}/`;

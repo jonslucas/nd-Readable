@@ -5,7 +5,6 @@ import { SUBMIT_POST, ADD_COMMENT, DELETE_COMMENT, DELETE_POST, VOTE_UP_COMM,
 
 function comments (state={}, action) {
   const {id, parentId, timestamp, body, author, voteScore, parentDeleted, comments} = action;
-  console.log(JSON.stringify(action, null, 2));
   switch (action.type) {
     case RECEIVE_COMMENTS:
       return {...comments}

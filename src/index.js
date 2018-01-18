@@ -10,7 +10,7 @@ import reducer from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 import 'font-awesome/css/font-awesome.min.css';
 
-
+//TODO: remove redux devtool hook
 const store = createStore(
   reducer,
   compose(

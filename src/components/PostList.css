@@ -2,11 +2,9 @@
   height: 30px;
   display: inline-block;
 
-  /* background: #8FD0CE; */
 }
 .cat-nav-label {
   display: inline-block;
-  /* color: white; */
   height: 100%;
 }
 .cat-btn {
@@ -30,7 +28,6 @@
 .post-list-item-container {
   width: 95%;
   height: 200px;
-  /* border: solid .15px #BDBDBD; */
   border-radius: 10px;
   padding: 1em;
   margin: 10px 20px 30px 20px;
@@ -48,23 +45,16 @@
 }
 
 .post-list-item-content {
-  /* border: solid .5px black; */
   display: inline-block;
   width: 91%;
   position: absolute;
-  /* right: 1.75em; */
   left: 5em;
 }
 .post-list-item-header {
-  /* border: solid .5px black; */
   border-bottom: solid .5px #BDBDBD;
-  /* background: #00796B;
-  color: #fff; */
   position: absolute;
   top: 0em;
   width: 100%;
-  /* right: 1.5em; */
-  /* left: 4em; */
   padding-bottom: 1em;
 
 }
@@ -80,8 +70,6 @@
   font-style: italic;
 }
 .post-list-item-body-preview {
-  /* border: solid .5px black; */
-  /* height: 4em; */
   position: absolute;
   top: 3em;
   width: 100%;
@@ -109,14 +97,12 @@
   top: 10em;
 }
 .post-list-item-categories {
-  /* border: solid .5px black; */
   display: inline-block;
   float: left;
   font-style: italic;
 
 }
 .post-list-item-comm-count {
-  /* border: solid .5px black; */
   display: inline-block;
   float: right;
   font-style: italic;
@@ -125,7 +111,6 @@
 .no-posts-found {
   width: 95%;
   height: 150px;
-  /* border: solid .15px #BDBDBD; */
   border-radius: 10px;
   padding: 1em;
   margin: 10px 20px 30px 20px;

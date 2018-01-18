@@ -4,15 +4,12 @@
   position: absolute;
   right: .8em;
   top: .5em;
-  /* border: solid .5px green; */
 
 }
 .post-edit-btn,
 .post-delete-btn {
   cursor: pointer;
-  /* border: solid .5px black; */
   display: inline-block;
-  /* float: right; */
   margin: .3em .3em 0 25px;
 }
 .post-edit-btn > a,
@@ -21,20 +18,14 @@
 
 }
 .post-vote-btns {
-  /* border: solid .5px black; */
   display: inline-block;
   margin-left: 25px;
 }
 .post-content {
-  /* border: solid .5px blue; */
   position: absolute;
   width: 85%;
   left: 6em;
   top: 1em;
-}
-.post-header {
-  /* border: solid .5px black; */
-
 }
 .post-title:after{
   content: '';
@@ -61,7 +52,6 @@
   font-weight: 700;
 }
 .post-body {
-  /* border: solid 1px black; */
   position: absolute;
   top: 2.5em;
 
