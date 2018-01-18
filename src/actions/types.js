@@ -1,0 +1,11 @@
+export const SUBMIT_POST = 'SUBMIT_POST';
+export const DELETE_POST = 'DELETE_POST';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const DELETE_COMMENT = 'DELETE_COMMENT';
+export const VOTE_UP_COMM = 'VOTE_UP_COMM';
+export const VOTE_DOWN_COMM = 'VOTE_DOWN_COMM';
+export const VOTE_UP_POST = 'VOTE_UP_POST';
+export const VOTE_DOWN_POST = 'VOTE_DOWN_POST';
+export const RECEIVE_POSTS = 'RECEIVE_POSTS';
+export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
+export const INCREMENT_COMMENT = 'INCREMENT_COMMENT';
