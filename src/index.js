@@ -8,6 +8,7 @@ import './index.css';
 import App from './components/App';
 import reducer from './reducers';
 import registerServiceWorker from './registerServiceWorker';
+import 'font-awesome/css/font-awesome.min.css';
 
 
 const store = createStore(
