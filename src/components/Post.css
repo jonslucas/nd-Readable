@@ -8,9 +8,10 @@
 }
 .post-edit-btn,
 .post-delete-btn {
+  padding: .5em 1em;
   cursor: pointer;
   display: inline-block;
-  margin: .3em .3em 0 25px;
+  margin: .3em .15em 0 15px;
 }
 .post-edit-btn > a,
 .post-delete-btn {

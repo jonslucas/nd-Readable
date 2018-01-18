@@ -33,8 +33,12 @@
   bottom: 0.3em;
   right: 0.3em;
 }
-.comment-edit-delete-grp > div {
+.comment-nav {
   display: inline-block;
   cursor: pointer;
-  margin-left: 25px;
+  margin-left: 15px;
+}
+.comment-nav.edit-btn,
+.comment-nav.delete-btn {
+  padding: .5em 1em;
 }

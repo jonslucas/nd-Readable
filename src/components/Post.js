@@ -11,8 +11,8 @@ export const Post = (props) => {
   return (
     <div className="post-container">
       <div className="post-edit-delete-grp">
-        <div className="post-edit-btn"><Link to={editLink}> Edit </Link></div>
-        <a className="post-delete-btn" onClick={(e)=>{
+        <div className="post-edit-btn nav-btn edit-btn"><Link to={editLink}> Edit </Link></div>
+        <a className="post-delete-btn nav-btn delete-btn" onClick={(e)=>{
           remove(post.id);
           window.location.href = `${window.location.origin}/`;
         }}> Delete </a>

@@ -18,8 +18,8 @@ export const Comment = (props) => {
       </div>
 
       <div className="comment-edit-delete-grp">
-        <div onClick={(e)=>edit(comment.id)}> Edit </div>
-        <div onClick={(e)=>remove(comment.id)}> Delete </div>
+        <div className="comment-nav nav-btn edit-btn" onClick={(e)=>edit(comment.id)}> Edit </div>
+        <div className="comment-nav nav-btn delete-btn" onClick={(e)=>remove(comment.id)}> Delete </div>
       </div>
 
     </div>

@@ -17,6 +17,13 @@
   float: right;
 }
 
+.post-detail-comment-btn {
+  padding: .5em 1em;
+  background: #00796B;
+  color: #fff;
+  margin-left: 4px;
+}
+
 .modal {
   position: absolute;
   top: 50px;

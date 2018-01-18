@@ -57,7 +57,7 @@ class PostDetail extends React.Component {
         <Post post={post} remove={deletePost} />
         <div className="post-detail-btns">
           <div>
-            <button onClick={()=>this.editComment('')} >Comment</button>
+            <div className="post-detail-comment-btn nav-btn" onClick={()=>this.editComment('')} >Comment</div>
           </div>
           <div className="post-detail-sort">
             <Sort currSort={sortComm} changeSort={this.changeSort} />

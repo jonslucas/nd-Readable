@@ -88,18 +88,19 @@
 }
 .post-list-item-body-nav-btn {
   display: block;
-  padding: .5em .2em;
   margin: .18em 0;
+}
+.nav-btn {
+  padding: .5em .2em;
   border: solid 1px #BDBDBD;
   text-align: center;
   cursor: pointer;
   background: #e4ffea;
-
 }
 .more-btn {
   margin-top: -7px;;
 }
-.post-list-item-body-nav-btn > a {
+.nav-btn > a {
   text-decoration: none;
   color: #212121;
 
