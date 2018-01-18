@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { SUBMIT_POST, ADD_COMMENT, DELETE_COMMENT, DELETE_POST, VOTE_UP_COMM,
          VOTE_UP_POST, VOTE_DOWN_COMM, VOTE_DOWN_POST, RECEIVE_POSTS,
-         RECEIVE_COMMENTS } from '../actions';
+         RECEIVE_COMMENTS, INCREMENT_COMMENT } from '../actions';
 
 function comments (state={}, action) {
   const {id, parentId, timestamp, body, author, voteScore, parentDeleted, comments} = action;
@@ -97,6 +97,14 @@ function posts (state={}, action) {
           voteScore: state[id].voteScore-1
         }
       };
+    case INCREMENT_COMMENT:
+    return {
+      ...state,
+      [id]: {
+        ...state[id],
+        commentCount: state[id].commentCount+1
+      }
+    }
     default:
       return state;
   }

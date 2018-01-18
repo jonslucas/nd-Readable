@@ -29,6 +29,10 @@ export const Post = (props) => {
         <div className="post-body">
           {post.body}
         </div>
+
+      </div>
+      <div className="post-footer">
+        {post.commentCount} comments
       </div>
     </div>
   );

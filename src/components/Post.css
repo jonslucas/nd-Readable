@@ -56,3 +56,7 @@
   top: 2.5em;
 
 }
+.post-footer {
+  position: relative;
+  margin-left: 10px;
+}

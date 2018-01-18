@@ -10,6 +10,7 @@ export const VOTE_UP_POST = 'VOTE_UP_POST';
 export const VOTE_DOWN_POST = 'VOTE_DOWN_POST';
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
+export const INCREMENT_COMMENT = 'INCREMENT_COMMENT';
 
 function upVoteCommLocal(id) {
   return {
@@ -79,7 +80,6 @@ function addPostLocal({
   voteScore,
   category
 }) {
-  console.log(`voteScore: ${voteScore}`);
   return {
     type: SUBMIT_POST,
     id,
@@ -97,6 +97,13 @@ function deletePostLocal(id) {
     type: DELETE_POST,
     id,
   };
+}
+
+function incrementCommentCount(id) {
+  return {
+    type: INCREMENT_COMMENT,
+    id
+  }
 }
 
 export const fetchPosts = () => dispatch => (
@@ -154,6 +161,7 @@ export const fetchComments = (postId) => dispatch => (
 export const addComment = (comment) => dispatch => (
   API.addComment(comment)
      .then(r=>dispatch(addCommentLocal(comment)))
+     .then(r=>dispatch(incrementCommentCount(comment.parentId)))
      .catch(console.log)
 );
 export const updateComment = (comment) => dispatch => (
