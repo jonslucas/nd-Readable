@@ -23,24 +23,10 @@ export function receivePosts(posts) {
   };
 }
 
-export function addPostLocal({
-  id,
-  title,
-  author,
-  body,
-  timestamp,
-  voteScore,
-  category
-}) {
+export function addPostLocal(post) {
   return {
     type: Types.SUBMIT_POST,
-    id,
-    title,
-    author,
-    body,
-    timestamp,
-    voteScore,
-    category,
+    ...post
   };
 }
 

@@ -21,15 +21,10 @@ export function receiveComments(comments) {
     comments
   };
 }
-export function addCommentLocal({id, author, body, parentId, timestamp, voteScore}) {
+export function addCommentLocal(comment) {
   return {
     type: Types.ADD_COMMENT,
-    id,
-    author,
-    body,
-    parentId,
-    voteScore,
-    timestamp,
+    ...comment
   };
 }
 

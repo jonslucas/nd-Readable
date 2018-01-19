@@ -36,8 +36,8 @@ class PostDetail extends React.Component {
   componentWillMount() {
     if (!this.props.post) {
       this.props.getPost(this.props.match.params.postId)
-        .then(b=>{
-          if (!b) window.location.href = `${window.location.origin}/`;
+        .then(_=>{
+          if (!this.props.post) window.location.href = `${window.location.origin}/`;
           else this.setState({postIsLoading: false})
         });
       this.props.getComments(this.props.match.params.postId);

@@ -1,7 +1,7 @@
 import * as Types from '../actions/types';
 
 function posts (state={}, action) {
-  const {id, timestamp, title, body, author, category, voteScore, posts } = action;
+  const {id, timestamp, title, body, author, category, voteScore, commentCount, posts } = action;
 
   switch (action.type) {
     case Types.RECEIVE_POSTS:
@@ -18,6 +18,7 @@ function posts (state={}, action) {
           category,
           voteScore: voteScore || 1,
           timestamp,
+          commentCount,
           deleted: false
         }
       };
